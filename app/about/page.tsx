@@ -200,7 +200,7 @@ export default function AboutUs() {
                         Contact us today to learn more about our services and how we can support your loved ones.
                     </p>
                     <Link 
-                        href="/contact"
+                        href="mailto:infinitehealthcare21@gmail.com"
                         className="inline-flex items-center space-x-2 px-8 py-4 bg-white text-primary font-semibold rounded-lg hover:bg-white/90 transition-all duration-300 group"
                     >
                         <span>Get in Touch</span>

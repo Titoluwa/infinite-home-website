@@ -133,15 +133,15 @@ export default function Services() {
               }
             ].map((item, index) => (
                 <div  key={index + item.title} className="bg-white dark:bg-slate-900 rounded-xl p-8 border border-border text-center hover:shadow-lg transition-all duration-300 group">
-                    <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300 flex justify-center">
-                        {item.icon}
-                    </div>
-                    <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
-                        {item.title}
-                    </h3>
-                    <p className="text-muted-foreground leading-relaxed">
-                        {item.description}
-                    </p>
+                  <div className="text-5xl mb-4 group-hover:scale-110 transition-transform duration-300 flex justify-center">
+                    {item.icon}
+                  </div>
+                  <h3 className="text-2xl font-bold text-foreground mb-3 group-hover:text-primary transition-colors">
+                    {item.title}
+                  </h3>
+                  <p className="text-muted-foreground leading-relaxed">
+                    {item.description}
+                  </p>
                 </div>
             ))}
           </div>
@@ -149,10 +149,9 @@ export default function Services() {
       </div>
 
       {/* CTA Section */}
-      <div className="py-20 bg-background">
+      {/* <div className="py-20 bg-background">
         <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="relative rounded-2xl overflow-hidden bg-gradient-to-r from-primary/90 to-primary p-12 md:p-16 text-center">
-            {/* Background Decoration */}
             <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full -mr-48 -mt-48 blur-3xl"></div>
             <div className="absolute bottom-0 left-0 w-96 h-96 bg-white/10 rounded-full -ml-48 -mb-48 blur-3xl"></div>
 
@@ -176,7 +175,30 @@ export default function Services() {
             </div>
           </div>
         </div>
+      </div> */}
+
+      {/* CTA Section */}
+      <div className="py-16 bg-gradient-to-r from-primary/90 to-primary rounded-2xl mx-4 sm:mx-6 lg:mx-8 mb-20 relative overflow-hidden">
+          <div className="absolute top-0 right-0 w-96 h-96 bg-white/10 rounded-full -mr-48 -mt-48 blur-3xl"></div>
+          
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+              <h2 className="text-3xl md:text-4xl font-bold text-white mb-6">
+                Ready to Get Started?
+              </h2>
+              <p className="text-lg text-white/90 mb-8 max-w-2xl mx-auto">
+                Interested in any of our services? We're here to help. Contact us today to discuss your care needs 
+                and find the perfect solution for you or your loved one.
+              </p>
+              <Link 
+                  href="mailto:infinitehealthcare21@gmail.com"
+                  className="inline-flex items-center space-x-2 px-8 py-4 bg-white text-primary font-semibold rounded-lg hover:bg-white/90 transition-all duration-300 group"
+              >
+                  <span>Get in Touch</span>
+                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </Link>
+          </div>
       </div>
+
     </section>
   );
 }

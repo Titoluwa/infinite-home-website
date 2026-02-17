@@ -1,5 +1,6 @@
-import { Phone, Mail, MapPin, ArrowRight, Send, Clock, Shield } from "lucide-react";
-import { Button } from "@/components/ui/button";
+import { Phone, Mail, MapPin, ArrowRight, Clock, Shield } from "lucide-react";
+import { FaMapMarkedAlt } from "react-icons/fa";
+
 
 export default function ContactUs() {
     return (
@@ -101,9 +102,12 @@ export default function ContactUs() {
             <div className="flex justify-center">
               <div className="h-1 w-20 bg-gradient-to-r from-primary to-secondary rounded-full"></div>
             </div> */}
-            <p className="text-lg text-muted-foreground max-w-2xl mx-auto">
-              <span className="text-secondary font-semibold">Visit</span> us at our office location in Commerce City, Colorado
-            </p>
+            <div className="flex flex-col items-center gap-2">
+                <FaMapMarkedAlt className="size-10 fill-secondary text-secondary/90"/>
+                <p className="flex flex-row items-center gap-2 text-lg text-muted-foreground max-w-2xl mx-auto">
+                    <span className="text-secondary font-semibold">Visit</span> us at our office location in Commerce City, Colorado
+                </p>
+            </div>
           </div>
 
           {/* Map Container */}
