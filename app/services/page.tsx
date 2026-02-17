@@ -78,7 +78,7 @@ export default function Services() {
                     <div className="mb-8 flex-1">
                       <h4 className="font-semibold text-foreground mb-4 flex items-center gap-2">
                         <span className="w-2 h-2 bg-primary rounded-full"></span>
-                        What We Offer
+                        <span>What We Offer</span>
                       </h4>
                       <ul className="space-y-3">
                         {service.features.map((feature, idx) => (

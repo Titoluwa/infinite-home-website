@@ -7,6 +7,18 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { Menu, X } from "lucide-react";
 
+const NavLink = ({ href, label, active }: { href: string; label: string; active: boolean }) => (
+    <Link
+        href={href}
+        className={`relative px-1 py-2 font-medium transition-colors duration-200 ${active
+            ? "text-primary underline decoration-secondary decoration-2 underline-offset-8"
+            : "text-foreground hover:text-primary hover:underline hover:decoration-primary hover:underline-offset-8 hover:decoration-2 transition"
+            }`}
+    >
+        {label}
+    </Link>
+);
+
 export default function Header() {
     const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
     const pathname = usePathname();
@@ -29,39 +41,7 @@ export default function Header() {
 
     const isActive = (href: string) => pathname === href;
 
-    const NavLink = ({ href, label }: { href: string; label: string }) => (
-        <Link
-            href={href}
-            className={`relative px-1 py-2 font-medium transition-colors duration-200 ${isActive(href)
-                    ? "text-primary underline decoration-secondary decoration-2 underline-offset-8"
-                    : "text-foreground hover:text-primary hover:underline hover:decoration-primary hover:underline-offset-8 hover:decoration-2 transition"
-                }`}
-        >
-            {label}
-        </Link>
-    );
-
     return (
-        <>
-        {/* <header className="sticky top-0 z-50 w-full border-b border-border bg-background shadow-sm">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex items-center justify-between h-24">
-                <div className="flex items-center gap-3">
-                    <Image src="/images/infinitehome-logo-remove.png" alt="Infinite Home Health Care" width={50} height={50} className="size-20" />
-                    <div className="flex flex-col justify-center hidden md:block font-serif">
-                        <h4 className="font-bold text-md text-center">Infinite <br /> Home Health care</h4>
-                    </div>
-                </div>
-                     <nav className="hidden md:flex items-center gap-8 font-semibold text-base ">
-                     <a href="/" className="hover:text-primary hover:underline hover:decoration-secondary hover:underline-offset-4 hover:decoration-2 transition">Home</a>
-                     <a href="/about" className="hover:text-primary hover:underline hover:decoration-secondary hover:underline-offset-4 hover:decoration-2 transition">About Us</a>
-                     <a href="/services" className="hover:text-primary hover:underline hover:decoration-secondary hover:underline-offset-4 hover:decoration-2 transition">Services</a>
-                     <a href="/contact" className="hover:text-primary hover:underline hover:decoration-secondary hover:underline-offset-4 hover:decoration-2 transition">Contact</a>
-                 </nav>
-                 <a href="tel:7207032196" className="md:hidden">
-                     <Button size="sm" className="bg-primary hover:bg-primary/90">Call Now</Button>
-                 </a>
-             </div>
-        </header> */}
         <header className="sticky top-0 z-50 w-full border-b border-border bg-background/95 backdrop-blur-sm shadow-sm">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 ">
                 <div className="flex items-center justify-between h-24">
@@ -79,7 +59,7 @@ export default function Header() {
                     {/* Desktop Navigation */}
                     <nav className="hidden md:flex items-center gap-8">
                         {navLinks.map((link) => (
-                            <NavLink key={link.href} href={link.href} label={link.label} />
+                            <NavLink key={link.href} href={link.href} label={link.label} active={isActive(link.href)} />
                         ))}
                     </nav>
 
@@ -112,8 +92,8 @@ export default function Header() {
                                     href={link.href}
                                     onClick={closeMobileMenu}
                                     className={`px-4 py-3 rounded-lg font-medium transition-all duration-200 ${isActive(link.href)
-                                            ? "bg-primary text-primary-foreground"
-                                            : "text-foreground hover:bg-accent"
+                                        ? "bg-primary text-primary-foreground"
+                                        : "text-foreground hover:bg-accent"
                                         }`}
                                 >
                                     {link.label}
@@ -134,6 +114,5 @@ export default function Header() {
                 )}
             </div>
         </header>
-        </>
     );
 }
