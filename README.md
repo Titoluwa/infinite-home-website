@@ -1,1 +1,1 @@
-## Infinite Home Healthcare
+## Infinite Home Health Care

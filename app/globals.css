@@ -4,6 +4,8 @@
 
 @layer base {
   :root {
+    --font-sans: 'Geist', 'Geist Fallback';
+    --font-serif: 'Crimson Text', 'Lora', serif;
     --radius: 0.5rem;
     --background: 0 0% 100%;
     --foreground: 0 0% 3.9%;
